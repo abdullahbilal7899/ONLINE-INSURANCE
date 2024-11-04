@@ -1,0 +1,102 @@
+﻿@model Insurance.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- Font Icon -->
+<link rel="stylesheet" href="~/fonts/material-icon/css/material-design-iconic-font.min.css" />
+
+
+<!-- Main css -->
+<link rel="stylesheet" href="~/logincss/signup.css" />
+
+
+
+
+
+@{
+    Layout = null;
+}
+
+@*<h1>Create</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+ 
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+<body style="     background-image:url(/images/GettyImages-1180387704.webp);">
+    <div class="main" style="  padding:60px 0px; background-image:url(/images/GettyImages-1180387704.webp);">
+
+<section class="signup">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <h2 class="form-title">Sign up</h2>
+                        <form  class="register-form" id="register-form" asp-action="Create">
+                    <div class="form-group">
+                                <label asp-for="UserName" ><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input asp-for="UserName" type="text" id="name" placeholder="Your Name" />
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                                <label asp-for="UserEmail" ><i class="zmdi zmdi-email"></i></label>
+                                <input asp-for="UserEmail" type="email" id="email" placeholder="Your Email" />
+                                <span asp-validation-for="UserEmail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                                <label asp-for="Password" ><i class="zmdi zmdi-lock"></i></label>
+                                <input asp-for="Password" type="password"  id="pass" placeholder="Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    
+                  
+                    <div class="form-group form-button">
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
+                    </div>
+                </form>
+            </div>
+            <div class="signup-image">
+                <figure><img src="~/images/signup-image.jpg" alt="sing up image"></figure>
+                        <a asp-action="Login" class="signup-image-link">I am already member</a>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+    !-- JS -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/loginjs/main.js"></script>
+</body>
